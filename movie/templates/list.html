@@ -1,0 +1,27 @@
+
+{% extends "base.html" %}
+{% block title %}
+LIST
+{% endblock title %}
+
+{% block content %}
+
+
+	<div class="row">
+	{% for resp in resps.Search %}
+	<div class="col-xl-4 col-lg-4 my-3">
+		<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{resp.Title}}</h5>
+    <form action="{% url 'detail-view' %}">
+    <input type="hidden" value="{{resp.url}}" name='detail'>
+    <button class="btn btn-primary" type='submit'>Detail</button>
+    </form>
+  </div>
+</div>
+</div>
+
+
+	{% endfor %}
+
+{% endblock content %}
